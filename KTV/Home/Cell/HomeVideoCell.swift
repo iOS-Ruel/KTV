@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVideoCell: UITableViewCell {
+class HomeVideoCell: UICollectionViewCell {
     static let identifier = "HomeVideoCell"
     static let height: CGFloat = 320
     
@@ -28,12 +28,12 @@ class HomeVideoCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.containerView.layer.cornerRadius = 20
+        self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
         self.containerView.layer.borderWidth = 1
-//        self.containerView.clipsToBounds = true
-        self.containerView.layer.cornerRadius = 10
-        self.containerView.layer.borderWidth = 1
+        
+        self.channelImageView.layer.cornerRadius = 10
+        self.channelImageView.layer.borderWidth = 1
         
     }
     
@@ -53,10 +53,7 @@ class HomeVideoCell: UITableViewCell {
         self.channelSubTitleLabel.text = nil
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-    }
     
     func setData(_ data: Home.Video) {
         self.titleLabel.text = data.title

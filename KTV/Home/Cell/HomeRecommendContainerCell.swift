@@ -13,7 +13,7 @@ protocol HomeRecommendContainerCellDelegate: AnyObject {
 }
 
 
-class HomeRecommendContainerCell: UITableViewCell {
+class HomeRecommendContainerCell: UICollectionViewCell {
     static let identifier: String = "HomeRecommendContainerCell"
     
     static func height(viewModel: HomeRecommendViewModel) -> CGFloat {
@@ -52,10 +52,7 @@ class HomeRecommendContainerCell: UITableViewCell {
         self.delegate?.homeRecommendContainerCellFoldChanged(self)
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-    }
+  
     
     func setViewModel(_ viewModel: HomeRecommendViewModel) {
         self.viewModel = viewModel

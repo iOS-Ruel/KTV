@@ -13,7 +13,7 @@ protocol HomeRankingContainerCellDeleate: AnyObject {
 }
 
 
-class HomeRankingContainerCell: UITableViewCell {
+class HomeRankingContainerCell: UICollectionViewCell {
     static let identifier: String = "HomeRankingContainerCell"
     static let height: CGFloat = 349
     
@@ -33,11 +33,6 @@ class HomeRankingContainerCell: UITableViewCell {
         self.collectionView.delegate = self
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setData(_ data: [Home.Ranking]) {
         self.rankings = data

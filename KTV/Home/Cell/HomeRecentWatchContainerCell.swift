@@ -12,7 +12,7 @@ protocol HomeRecentWatchContainerCellDelegate: AnyObject {
     func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int)
 }
 
-class HomeRecentWatchContainerCell: UITableViewCell {
+class HomeRecentWatchContainerCell: UICollectionViewCell {
     static let identifier: String = "HomeRecentWatchContainerCell"
     static let height: CGFloat = 209
     
@@ -35,11 +35,6 @@ class HomeRecentWatchContainerCell: UITableViewCell {
         self.collectionView.dataSource = self
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func setData(_ data: [Home.Recent]) {
         self.recents = data

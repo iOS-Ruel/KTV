@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dfI-De-6bM" customClass="HomeFooterView" customModule="KTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="106"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBj-fj-vec">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="106"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7S-qP-eOv">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="1"/>
+                            <color key="backgroundColor" name="stroke-light"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="brd-Ay-PqK"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" text="이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpl-zW-ALr">
+                            <rect key="frame" x="27.999999999999996" y="11" width="34.666666666666657" height="38"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-qm-xsk">
+                            <rect key="frame" x="27.999999999999996" y="61" width="51.666666666666657" height="28"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="K사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gwk-HB-fG8">
+                                    <rect key="frame" x="24" y="3.3333333333333286" width="27.666666666666671" height="21.666666666666668"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                    <color key="textColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cuD-EF-syV">
+                                    <rect key="frame" x="0.0" y="5.6666666666666714" width="14" height="16.666666666666668"/>
+                                    <color key="tintColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16.5" id="Gsc-jR-6tb"/>
+                                        <constraint firstAttribute="width" constant="14" id="fFx-FQ-TCC"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Gwk-HB-fG8" firstAttribute="centerY" secondItem="5ml-qm-xsk" secondAttribute="centerY" id="4aK-K1-dED"/>
+                                <constraint firstItem="Gwk-HB-fG8" firstAttribute="leading" secondItem="cuD-EF-syV" secondAttribute="trailing" constant="10" id="Ejc-Se-cN6"/>
+                                <constraint firstAttribute="height" constant="28" id="YI0-69-rax"/>
+                                <constraint firstItem="cuD-EF-syV" firstAttribute="leading" secondItem="5ml-qm-xsk" secondAttribute="leading" id="cBO-dl-Jda"/>
+                                <constraint firstItem="cuD-EF-syV" firstAttribute="centerY" secondItem="5ml-qm-xsk" secondAttribute="centerY" id="hpH-oW-alG"/>
+                                <constraint firstAttribute="trailing" secondItem="Gwk-HB-fG8" secondAttribute="trailing" id="ni5-O4-QT2"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="유료서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Jn-Kcp">
+                            <rect key="frame" x="83.666666666666657" y="11" width="309.33333333333337" height="12"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                            <color key="textColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="bg"/>
+                    <constraints>
+                        <constraint firstItem="cpl-zW-ALr" firstAttribute="top" secondItem="F7S-qP-eOv" secondAttribute="bottom" constant="10" id="7Ct-IM-Hsp"/>
+                        <constraint firstItem="5Rg-Jn-Kcp" firstAttribute="top" secondItem="F7S-qP-eOv" secondAttribute="bottom" constant="10" id="TYb-x5-Oj7"/>
+                        <constraint firstItem="5ml-qm-xsk" firstAttribute="leading" secondItem="sBj-fj-vec" secondAttribute="leading" constant="28" id="Y8d-M9-2se"/>
+                        <constraint firstAttribute="trailing" secondItem="F7S-qP-eOv" secondAttribute="trailing" id="YWU-7n-uhB"/>
+                        <constraint firstItem="F7S-qP-eOv" firstAttribute="leading" secondItem="sBj-fj-vec" secondAttribute="leading" id="frB-8R-aGH"/>
+                        <constraint firstAttribute="bottom" secondItem="5ml-qm-xsk" secondAttribute="bottom" constant="17" id="iI2-Vc-7gW"/>
+                        <constraint firstItem="5ml-qm-xsk" firstAttribute="top" secondItem="cpl-zW-ALr" secondAttribute="bottom" constant="12" id="ozx-Bm-cgp"/>
+                        <constraint firstItem="5Rg-Jn-Kcp" firstAttribute="leading" secondItem="cpl-zW-ALr" secondAttribute="trailing" constant="21" id="qb7-Ol-Vkx"/>
+                        <constraint firstItem="F7S-qP-eOv" firstAttribute="top" secondItem="sBj-fj-vec" secondAttribute="top" id="rtB-dW-bqU"/>
+                        <constraint firstAttribute="trailing" secondItem="5Rg-Jn-Kcp" secondAttribute="trailing" id="uCC-vJ-OEO"/>
+                        <constraint firstItem="cpl-zW-ALr" firstAttribute="leading" secondItem="sBj-fj-vec" secondAttribute="leading" constant="28" id="uXJ-je-6Q5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="sBj-fj-vec" secondAttribute="trailing" id="48L-Fz-k9h"/>
+                <constraint firstAttribute="bottom" secondItem="sBj-fj-vec" secondAttribute="bottom" id="Agy-8W-kmQ"/>
+                <constraint firstItem="sBj-fj-vec" firstAttribute="leading" secondItem="dfI-De-6bM" secondAttribute="leading" id="FMb-Rw-cqr"/>
+                <constraint firstItem="sBj-fj-vec" firstAttribute="top" secondItem="dfI-De-6bM" secondAttribute="top" id="wXg-Z2-319"/>
+            </constraints>
+            <point key="canvasLocation" x="101.5267175572519" y="88.028169014084511"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="logo" width="24" height="29"/>
+        <namedColor name="bg">
+            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="stroke-light">
+            <color red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
