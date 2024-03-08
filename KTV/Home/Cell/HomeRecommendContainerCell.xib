@@ -72,7 +72,7 @@
                 <outlet property="foldButton" destination="lRY-cl-pYD" id="JRB-RT-MuP"/>
                 <outlet property="tableView" destination="88e-Md-zfM" id="tqF-SE-mMo"/>
             </connections>
-            <point key="canvasLocation" x="6" y="21"/>
+            <point key="canvasLocation" x="4.5801526717557248" y="20.774647887323944"/>
         </tableViewCell>
     </objects>
     <resources>
