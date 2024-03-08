@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-lB-JdQ">
                         <rect key="frame" x="21" y="0.0" width="351" height="301"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-Yf-6dV">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-Yf-6dV">
                                 <rect key="frame" x="0.0" y="0.0" width="351" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="nFg-wO-ZkI"/>
@@ -72,9 +72,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-53-GVl">
                                 <rect key="frame" x="35" y="240" width="281" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ruo-ay-lBP">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Ruo-ay-lBP">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" name="gray-1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="hPJ-9Z-LRu"/>
                                         </constraints>
@@ -157,11 +156,9 @@
     <resources>
         <image name="favorite" width="20" height="20"/>
         <image name="hot" width="45" height="20"/>
+        <image name="user" width="14" height="14"/>
         <namedColor name="bg">
             <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray-1">
-            <color red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="main-wh">
             <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,7 +15,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
+        self.setupTableView()
+        self.bindViewModel()
+        self.homeViewModel.requestData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {.lightContent}
@@ -50,6 +52,13 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
+    }
+    
+    private func bindViewModel() {
+        self.homeViewModel.dataChanged = { [weak self] in
+            self?.tableView.isHidden = false
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -111,15 +120,29 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             )
         case .video:
-            return tableView.dequeueReusableCell(
+            let cell = tableView.dequeueReusableCell(
                 withIdentifier: HomeVideoCell.identifier,
                 for: indexPath
             )
+            
+            if
+                let cell = cell as? HomeVideoCell,
+                let data = self.homeViewModel.home?.videos[indexPath.row] {
+                cell.setData(data)
+            }
+            
+            return cell
         case .ranking:
             let cell = tableView.dequeueReusableCell(
                 withIdentifier: HomeRankingContainerCell.identifier,
                 for: indexPath
             )
+            
+            if
+                let cell = cell as? HomeRankingContainerCell,
+                let data = self.homeViewModel.home?.rankings {
+                cell.setData(data)
+            }
             
             (cell as? HomeRankingContainerCell)?.delegate = self
             
@@ -130,7 +153,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             )
             
-            (cell as? HomeRecentWatchContainerCell)?.delegate = self
+            if
+                let cell = cell as? HomeRecentWatchContainerCell,
+                let data = self.homeViewModel.home?.recents {
+                cell.delegate = self
+                cell.setData(data)
+            }
             
             return cell
         case .recommend:
@@ -139,7 +167,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             )
             
-            (cell as? HomeRecommendContainerCell)?.delegate = self
+            if
+                let cell = cell as? HomeRecommendContainerCell,
+                let data = self.homeViewModel.home?.recommends {
+                cell.delegate = self
+                cell.setData(data)
+            }
             
             return cell
         case .footer:
