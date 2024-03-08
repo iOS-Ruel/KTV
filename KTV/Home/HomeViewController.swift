@@ -52,6 +52,7 @@ class HomeViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
 
+        self.tableView.isHidden = true
     }
     
     private func bindViewModel() {
@@ -102,7 +103,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case .recentWatch:
             return HomeRecentWatchContainerCell.height
         case .recommend:
-            return HomeRecommendContainerCell.height
+            return HomeRecommendContainerCell.height(viewModel: self.homeViewModel.recommendViewModel)
         case .footer:
             return HomeFooterCell.height
         }
@@ -153,8 +154,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             )
             
-            if
-                let cell = cell as? HomeRecentWatchContainerCell,
+            if let cell = cell as? HomeRecentWatchContainerCell,
                 let data = self.homeViewModel.home?.recents {
                 cell.delegate = self
                 cell.setData(data)
@@ -167,11 +167,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 for: indexPath
             )
             
-            if
-                let cell = cell as? HomeRecommendContainerCell,
-                let data = self.homeViewModel.home?.recommends {
+            if let cell = cell as? HomeRecommendContainerCell {
                 cell.delegate = self
-                cell.setData(data)
+                cell.setViewModel(self.homeViewModel.recommendViewModel)
             }
             
             return cell
@@ -185,6 +183,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeViewController: HomeRecommendContainerCellDelegate {
+    func homeRecommendContainerCellFoldChanged(_ cell: HomeRecommendContainerCell) {
+        self.tableView.reloadData()
+    }
+    
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print("home recommend cell did select item at \(index)")
     }

@@ -30,6 +30,17 @@ extension Home {
     struct Ranking: Decodable {
         let imageUrl: URL
         let videoId: Int
+        
+        enum CodingKeys: CodingKey {
+            case imageUrl
+            case videoId
+        }
+        
+        init(from decoder: any Decoder) throws {
+            let container: KeyedDecodingContainer<Home.Ranking.CodingKeys> = try decoder.container(keyedBy: Home.Ranking.CodingKeys.self)
+            self.imageUrl = try container.decode(URL.self, forKey: Home.Ranking.CodingKeys.imageUrl)
+            self.videoId = try container.decode(Int.self, forKey: Home.Ranking.CodingKeys.videoId)
+        }
     }
     
     struct Recent: Decodable {
