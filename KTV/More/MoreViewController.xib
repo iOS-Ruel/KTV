@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreViewController" customModule="KTV" customModuleProvider="target">
+            <connections>
+                <outlet property="headerView" destination="NKE-oc-wxf" id="Ng3-pc-roJ"/>
+                <outlet property="tableView" destination="SdQ-GX-kwd" id="znJ-ZW-UoI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-GX-kwd">
+                    <rect key="frame" x="0.0" y="619" width="393" height="233"/>
+                    <color key="backgroundColor" name="bg"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="233" id="yzb-aK-aNS"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKE-oc-wxf">
+                    <rect key="frame" x="0.0" y="573" width="393" height="46"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHO-Eu-Pdg">
+                            <rect key="frame" x="172.33333333333334" y="14.666666666666629" width="48.666666666666657" height="17"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                            <color key="textColor" name="main-wh"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEV-ay-ByD">
+                            <rect key="frame" x="332" y="3" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="WGJ-c4-AYU"/>
+                                <constraint firstAttribute="height" constant="40" id="gP5-xz-1YK"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="small_close"/>
+                            <connections>
+                                <action selector="closeDidTap:" destination="-1" eventType="touchUpInside" id="iFb-G3-OUs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="bg"/>
+                    <constraints>
+                        <constraint firstItem="dHO-Eu-Pdg" firstAttribute="centerY" secondItem="NKE-oc-wxf" secondAttribute="centerY" id="PhL-B1-SQe"/>
+                        <constraint firstItem="dHO-Eu-Pdg" firstAttribute="centerX" secondItem="NKE-oc-wxf" secondAttribute="centerX" id="SzK-lS-Dwb"/>
+                        <constraint firstAttribute="trailing" secondItem="mEV-ay-ByD" secondAttribute="trailing" constant="21" id="ZJU-jt-I3f"/>
+                        <constraint firstAttribute="height" constant="46" id="ebR-Q1-VJu"/>
+                        <constraint firstItem="mEV-ay-ByD" firstAttribute="centerY" secondItem="NKE-oc-wxf" secondAttribute="centerY" id="s5P-4n-zsc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="bg-controlpannel"/>
+            <constraints>
+                <constraint firstItem="SdQ-GX-kwd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ct3-nB-Z33"/>
+                <constraint firstAttribute="bottom" secondItem="SdQ-GX-kwd" secondAttribute="bottom" id="O70-Fy-q9w"/>
+                <constraint firstItem="SdQ-GX-kwd" firstAttribute="top" secondItem="NKE-oc-wxf" secondAttribute="bottom" id="QGV-SZ-lRP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SdQ-GX-kwd" secondAttribute="trailing" id="ZZ5-iS-F9w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NKE-oc-wxf" secondAttribute="trailing" id="e1l-AX-2Zh"/>
+                <constraint firstItem="NKE-oc-wxf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u1s-WM-sdd"/>
+            </constraints>
+            <point key="canvasLocation" x="-54" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="small_close" width="26" height="26"/>
+        <namedColor name="bg">
+            <color red="0.10588235294117647" green="0.10588235294117647" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="bg-controlpannel">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main-wh">
+            <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -19,8 +19,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
     static func height(viewModel: HomeRecommendViewModel) -> CGFloat {
         let top: CGFloat = 84 - 6 // 첫번째 cell에서 bottom까지의 거리 - cell의 상단 여백
         let bottom: CGFloat = 68 - 6 // 마지막 cell첫번째 bottom까지의 거리 - cell의 하단 여백
-        let footerInset: CGFloat = 51 // container -> footer 까지의 여백
-        return HomeRecommendItemCell.height * CGFloat(viewModel.itemCount) + top + bottom + footerInset
+        return VideoListItemCell.height * CGFloat(viewModel.itemCount) + top + bottom
     }
     
     @IBOutlet weak var tableView: UITableView!
@@ -30,7 +29,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
     
     weak var delegate: HomeRecommendContainerCellDelegate?
 
-    private var recommends: [Home.Recommend]?
+//    private var recommends: [Home.Recommend]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,12 +37,12 @@ class HomeRecommendContainerCell: UICollectionViewCell {
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.borderWidth = 1
         self.containerView.layer.borderColor = UIColor(named: "stroke-light")?.cgColor
-        self.tableView.rowHeight = HomeRecommendItemCell.height
+        self.tableView.rowHeight = VideoListItemCell.height
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(
-            UINib(nibName: "HomeRecommendItemCell", bundle: .main),
-            forCellReuseIdentifier: HomeRecommendItemCell.identifier
+            UINib(nibName: "VideoListItemCell", bundle: .main),
+            forCellReuseIdentifier: VideoListItemCell.identifier
         )
     }
     
@@ -58,6 +57,7 @@ class HomeRecommendContainerCell: UICollectionViewCell {
         self.viewModel = viewModel
         self.setButtonImage(viewModel.isFolded)
         self.tableView.reloadData()
+        
         viewModel.foldChanged = { [weak self] isFolded in
             self?.tableView.reloadData()
             self?.setButtonImage(isFolded)
@@ -77,13 +77,11 @@ extension HomeRecommendContainerCell: UITableViewDataSource, UITableViewDelegate
         self.viewModel?.itemCount ?? 0
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: HomeRecommendItemCell.identifier,
-            for: indexPath
-        )
+        let cell = tableView.dequeueReusableCell(withIdentifier: VideoListItemCell.identifier,for: indexPath)
         
-        if let cell = cell as? HomeRecommendItemCell,
+        if let cell = cell as? VideoListItemCell,
            let data = self.viewModel?.recommends?[indexPath.row] {
             cell.setData(data, rank: indexPath.row + 1)
         }

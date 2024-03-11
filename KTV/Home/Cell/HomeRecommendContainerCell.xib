@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jd9-U9-Lta">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jd9-U9-Lta" customClass="HomeRecommendContainerCell" customModule="KTV" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="495"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tvp-Ht-2va">
@@ -38,6 +38,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="unfold"/>
+                                <connections>
+                                    <action selector="foldButtonDidTap:" destination="jd9-U9-Lta" eventType="touchUpInside" id="9YD-8c-NGm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="bk-origin"/>
@@ -62,6 +65,11 @@
                     <constraint firstAttribute="bottom" secondItem="Zvf-le-jol" secondAttribute="bottom" id="lTF-Y5-aud"/>
                 </constraints>
             </collectionViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="Zvf-le-jol" id="COE-rJ-Bi2"/>
+                <outlet property="foldButton" destination="HPI-5m-3BR" id="tYZ-Yx-ULJ"/>
+                <outlet property="tableView" destination="Fxk-gx-ieQ" id="V6u-fS-aEN"/>
+            </connections>
             <point key="canvasLocation" x="60" y="-318"/>
         </collectionViewCell>
     </objects>

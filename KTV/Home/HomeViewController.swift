@@ -72,6 +72,12 @@ class HomeViewController: UIViewController {
             self?.collectionView.reloadData()
         }
     }
+    
+    private func presentVideoViewController() {
+        let vc = VideoViewController()
+        self.present(vc, animated: true)
+    }
+    
 }
 
 
@@ -192,26 +198,28 @@ extension HomeViewController: UICollectionViewDataSource {
         }
         switch section {
         case .header:
-            return collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: HomeHeaderView.identifier,
-                for: indexPath
-            )
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeHeaderView.identifier, for: indexPath)
         case .ranking:
-            return collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: HomeRankingHeaderView.identifier,
-                for: indexPath
-            )
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeRankingHeaderView.identifier,for: indexPath)
         case .footer:
-            return collectionView.dequeueReusableSupplementaryView(
-                ofKind: kind,
-                withReuseIdentifier: HomeFooterView.identifier,
-                for: indexPath
-            )
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeFooterView.identifier, for: indexPath)
         case .video, .recentWatch, .recommend:
             return .init()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = HomeSection(rawValue: indexPath.section) else {
+            return
+        }
+        
+        switch section {
+        case .header, .footer, .ranking, .recentWatch, .recommend:
+            return
+        case .video:
+            self.presentVideoViewController()
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -226,26 +234,18 @@ extension HomeViewController: UICollectionViewDataSource {
                 for: indexPath
             )
         case .video:
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeVideoCell.identifier,
-                for: indexPath
-            )
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeVideoCell.identifier, for: indexPath)
             
-            if
-                let cell = cell as? HomeVideoCell,
+            if let cell = cell as? HomeVideoCell,
                 let data = self.homeViewModel.home?.videos[indexPath.item] {
                 cell.setData(data)
             }
             
             return cell
         case .ranking:
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeRankingContainerCell.identifier,
-                for: indexPath
-            )
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRankingContainerCell.identifier, for: indexPath)
             
-            if
-                let cell = cell as? HomeRankingContainerCell,
+            if let cell = cell as? HomeRankingContainerCell,
                 let data = self.homeViewModel.home?.rankings {
                 cell.setData(data)
             }
@@ -254,13 +254,9 @@ extension HomeViewController: UICollectionViewDataSource {
             
             return cell
         case .recentWatch:
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeRecentWatchContainerCell.identifier,
-                for: indexPath
-            )
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecentWatchContainerCell.identifier, for: indexPath)
             
-            if
-                let cell = cell as? HomeRecentWatchContainerCell,
+            if let cell = cell as? HomeRecentWatchContainerCell,
                 let data = self.homeViewModel.home?.recents {
                 cell.delegate = self
                 cell.setData(data)
@@ -268,13 +264,9 @@ extension HomeViewController: UICollectionViewDataSource {
             
             return cell
         case .recommend:
-            let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: HomeRecommendContainerCell.identifier,
-                for: indexPath
-            )
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeRecommendContainerCell.identifier, for: indexPath)
             
-            if
-                let cell = cell as? HomeRecommendContainerCell {
+            if let cell = cell as? HomeRecommendContainerCell {
                 cell.delegate = self
                 cell.setViewModel(self.homeViewModel.recommendViewModel)
             }
@@ -292,18 +284,19 @@ extension HomeViewController: HomeRecommendContainerCellDelegate {
     
     func homeRecommendContainerCell(_ cell: HomeRecommendContainerCell, didSelectItemAt index: Int) {
         print("home recommend cell did select item at \(index)")
+        self.presentVideoViewController()
     }
 }
 
 extension HomeViewController: HomeRankingContainerCellDeleate {
     func homeRankingContainerCell(_ cell: HomeRankingContainerCell, didSelectItemAt index: Int) {
-        print("home ranking did select at \(index)")
+        self.presentVideoViewController()
     }
 }
 
 extension HomeViewController: HomeRecentWatchContainerCellDelegate {
     
     func homeRecentWatchContainerCell(_ cell: HomeRecentWatchContainerCell, didSelectItemAt index: Int) {
-        print("home recent watch did select at \(index)")
+        self.presentVideoViewController()
     }
 }
