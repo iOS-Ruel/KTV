@@ -21,7 +21,6 @@ enum LiveSortOption {
         Task{
             do {
                 let live = try await DataLoader.load(url: URLDefines.live, for: Live.self)
-                print(live)
                 let itmes: [Live.Item]
                 if sort == .start {
                     itmes = live.list.reversed()

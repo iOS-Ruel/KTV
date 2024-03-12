@@ -9,6 +9,8 @@ import UIKit
 
 class VideoViewController: UIViewController {
 
+    private let chattingHiddenBottomConstant: CGFloat = -500
+    
     //MARK: - 제어패널
     @IBOutlet weak var playButton: UIButton!
     
@@ -33,6 +35,7 @@ class VideoViewController: UIViewController {
     
     @IBOutlet weak var landscapePlayTimeLabel: UILabel!
     
+    @IBOutlet weak var chattingBottomConstraint: NSLayoutConstraint!
     private var isControlPannelHidden: Bool = true {
         didSet {
             if self.isLandscape(size: self.view.frame.size) {
@@ -52,6 +55,8 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var landscapePlayButton: UIButton!
     @IBOutlet weak var landscapeTitleLabel: UILabel!
     
+    var isLiveMode: Bool = false
+    @IBOutlet weak var chattingView: ChattingView!
     
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -81,14 +86,27 @@ class VideoViewController: UIViewController {
         self.setupRecommendTableView()
         self.bindViewModel()
         self.viewModel.request()
+        self.chattingView.delegate = self
+        self.chattingView.isHidden = !self.isLiveMode
+        
     }
     
     //회전 감지
     override func viewWillTransition(to size: CGSize, with coordinator: any UIViewControllerTransitionCoordinator) {
         
+        self.chattingView.textfield.resignFirstResponder()
         self.switchControlPannel(size: size)
         self.playerViewBottomContraint.isActive = self.isLandscape(size: size)
         
+        if self.isLandscape(size: size) {
+            self.chattingBottomConstraint.constant = self.chattingHiddenBottomConstant
+        } else {
+            self.chattingBottomConstraint.constant = 0
+        }
+        
+        
+        coordinator.animate { _ in
+            self.chattingView.collectionView.collectionViewLayout.invalidateLayout()}
         super.viewWillTransition(to: size, with: coordinator)
         //사이즈를 통해 가로인지 세로인지 파악할 수 있음
         
@@ -119,6 +137,9 @@ class VideoViewController: UIViewController {
     }
     
     @IBAction func commentDidTap(_ sender: Any) {
+        if self.isLiveMode {
+            self.chattingView.isHidden = false
+        }
     }
 }
 
@@ -258,3 +279,10 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+
+extension VideoViewController: ChattingViewDelegate {
+    func liveChattingViewCloseDidTap(_ chattingView: ChattingView) {
+//        self.setEditing(false, animated: true)
+        self.chattingView.isHidden = true
+    }
+}

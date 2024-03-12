@@ -39,7 +39,7 @@ class LiveCell: UICollectionViewCell {
     }
     
     func setData(_ data: Live.Item) {
-        print(data)
+        
         self.titleLabel.text = data.title
         self.descriptionLabel.text = data.channel
         self.imageTask = self.imageView.loadImage(url: data.thumbnailUrl)
