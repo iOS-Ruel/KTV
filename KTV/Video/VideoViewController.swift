@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVKit
 
 class VideoViewController: UIViewController {
 
@@ -58,6 +59,8 @@ class VideoViewController: UIViewController {
     var isLiveMode: Bool = false
     @IBOutlet weak var chattingView: ChattingView!
     
+    private var pipController: AVPictureInPictureController?
+    
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MMdd"
@@ -88,7 +91,7 @@ class VideoViewController: UIViewController {
         self.viewModel.request()
         self.chattingView.delegate = self
         self.chattingView.isHidden = !self.isLiveMode
-        
+        self.setupPIPController()
     }
     
     //회전 감지
@@ -110,6 +113,14 @@ class VideoViewController: UIViewController {
         super.viewWillTransition(to: size, with: coordinator)
         //사이즈를 통해 가로인지 세로인지 파악할 수 있음
         
+    }
+    
+    private func setupPIPController() {
+        guard
+            AVPictureInPictureController.isPictureInPictureSupported(), let playerLayer = self.playerView.avPlayerLayer else { return }
+        let pipController = AVPictureInPictureController(playerLayer: playerLayer)
+        pipController?.canStartPictureInPictureAutomaticallyFromInline = true
+        self.pipController = pipController
     }
     
     private func isLandscape(size: CGSize) -> Bool {
