@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +18,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="171"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="랭킹리스트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPX-MP-gTn">
-                            <rect key="frame" x="21" y="21" width="278" height="129"/>
+                            <rect key="frame" x="0.0" y="21" width="299" height="129"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" name="main-wh"/>
                             <nil key="highlightedColor"/>
@@ -28,18 +27,17 @@
                     <color key="backgroundColor" name="bg"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="WPX-MP-gTn" secondAttribute="bottom" constant="21" id="5RV-6M-MBc"/>
-                        <constraint firstItem="WPX-MP-gTn" firstAttribute="leading" secondItem="Wla-8A-gro" secondAttribute="leading" constant="21" id="Ehd-Oq-cyc"/>
+                        <constraint firstItem="WPX-MP-gTn" firstAttribute="leading" secondItem="Wla-8A-gro" secondAttribute="leading" id="Ehd-Oq-cyc"/>
                         <constraint firstItem="WPX-MP-gTn" firstAttribute="top" secondItem="Wla-8A-gro" secondAttribute="top" constant="21" id="raK-kq-jTM"/>
                         <constraint firstAttribute="trailing" secondItem="WPX-MP-gTn" secondAttribute="trailing" constant="21" id="yLw-v2-T6L"/>
                     </constraints>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <constraints>
-                <constraint firstItem="Wla-8A-gro" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="2XH-Im-4QR"/>
+                <constraint firstItem="Wla-8A-gro" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="2XH-Im-4QR"/>
                 <constraint firstAttribute="bottom" secondItem="Wla-8A-gro" secondAttribute="bottom" id="48F-kp-6IS"/>
                 <constraint firstItem="Wla-8A-gro" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Le0-tu-zFF"/>
-                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="Wla-8A-gro" secondAttribute="trailing" id="jQp-fH-6jH"/>
+                <constraint firstAttribute="trailing" secondItem="Wla-8A-gro" secondAttribute="trailing" id="jQp-fH-6jH"/>
             </constraints>
             <point key="canvasLocation" x="-73.282442748091597" y="110.21126760563381"/>
         </collectionReusableView>
