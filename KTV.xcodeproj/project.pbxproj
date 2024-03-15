@@ -59,6 +59,7 @@
 		417C40F42B9A1EED00BC6022 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C40F32B9A1EED00BC6022 /* HomeViewController.swift */; };
 		417C40F82B9A1F8C00BC6022 /* HomeVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417C40F62B9A1F8C00BC6022 /* HomeVideoCell.swift */; };
 		417C40F92B9A1F8C00BC6022 /* HomeVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 417C40F72B9A1F8C00BC6022 /* HomeVideoCell.xib */; };
+		417D795C2BA43D15003FDD43 /* VideoViewControllerContrainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417D795B2BA43D15003FDD43 /* VideoViewControllerContrainer.swift */; };
 		41991F7D2B9EEB9C007D573E /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41991F7C2B9EEB9C007D573E /* MyViewController.swift */; };
 		41991F802B9EEBDB007D573E /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41991F7F2B9EEBDB007D573E /* FavoriteViewController.swift */; };
 		41991F822B9EEC0B007D573E /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41991F812B9EEC0B007D573E /* FavoriteViewModel.swift */; };
@@ -162,6 +163,7 @@
 		417C40F32B9A1EED00BC6022 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		417C40F62B9A1F8C00BC6022 /* HomeVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoCell.swift; sourceTree = "<group>"; };
 		417C40F72B9A1F8C00BC6022 /* HomeVideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVideoCell.xib; sourceTree = "<group>"; };
+		417D795B2BA43D15003FDD43 /* VideoViewControllerContrainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewControllerContrainer.swift; sourceTree = "<group>"; };
 		41991F7C2B9EEB9C007D573E /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		41991F7F2B9EEBDB007D573E /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		41991F812B9EEC0B007D573E /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 				417C40F02B9A1A9800BC6022 /* Color.xcassets */,
 				417C40CC2B9A15B300BC6022 /* Info.plist */,
 				41991F962B9EF39A007D573E /* NavigationController.swift */,
+				417D795B2BA43D15003FDD43 /* VideoViewControllerContrainer.swift */,
 			);
 			path = KTV;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				41991F972B9EF39A007D573E /* NavigationController.swift in Sources */,
 				416677672B9B11CF00960469 /* DataLoader.swift in Sources */,
 				4113C3FA2B9F09110036D6AE /* MoreTableViewCell.swift in Sources */,
+				417D795C2BA43D15003FDD43 /* VideoViewControllerContrainer.swift in Sources */,
 				412050932B9F3E19004DF4D5 /* DateComponentsFormatterExtension.swift in Sources */,
 				416677692B9B372400960469 /* HomeRecommendViewModel.swift in Sources */,
 				41ACDEAD2BA08ED900BB13C1 /* LiveViewController.swift in Sources */,

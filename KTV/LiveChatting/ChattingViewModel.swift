@@ -15,7 +15,6 @@ import Foundation
     
     init() {
         self.chattingSimulator.setMessageHandler { [weak self] in
-            print($0)
             self?.messages.append($0)
             self?.chatReceived?()
         }

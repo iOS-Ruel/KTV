@@ -18,12 +18,14 @@ class MoreViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.modalPresentationStyle = .overFullScreen
+        self.modalTransitionStyle = .crossDissolve
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
         self.modalPresentationStyle = .overFullScreen
+        self.modalTransitionStyle = .crossDissolve
     }
     
     
@@ -51,7 +53,7 @@ class MoreViewController: UIViewController {
     
     
     @IBAction func closeDidTap(_ sender: Any) {
-        self.dismiss(animated: false)
+        self.dismiss(animated: true)
     }
     
     private func setupConerRadius() {

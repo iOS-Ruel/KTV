@@ -56,12 +56,9 @@ class ChattingView: UIView {
     }
     
     private func toggleViewModel(){
-        print(self.isHidden)
         if self.isHidden {
-            print("stop")
             self.viewModel.stop()
         } else {
-            print("start")
             self.viewModel.start()
         }
     }
